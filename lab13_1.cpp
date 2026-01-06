@@ -19,3 +19,34 @@ int main(){
     cout << "Min = " << B[5];
     return 0;
 }
+
+void stat(const double d[], int N, double B[])
+{
+    long double sum = 0;
+    long double sum_sq = 0;
+    long double geo = 1;
+    long double harm = 0;
+
+    long double max = d[0], min = d[0];
+
+    for (int i = 0; i < N; i++) {
+        sum += d[i];
+        sum_sq += d[i] * d[i];
+        geo *= d[i];
+        harm += 1.0 / d[i];
+
+        if (d[i] > max) max = d[i];
+        if (d[i] < min) min = d[i];
+    }
+
+    B[0] = sum / N;
+
+    B[1] = sqrt((sum_sq / N) - (B[0] * B[0]));
+
+    B[2] = pow(geo, 1.0 / N);
+
+    B[3] = N / harm;
+
+    B[4] = max;
+    B[5] = min;
+}

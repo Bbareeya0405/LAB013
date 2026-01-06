@@ -1,2 +1,2 @@
-# NAME:
-# STUDENT ID:
+# NAME:บารียา สะนิ
+# STUDENT ID: 670610713
